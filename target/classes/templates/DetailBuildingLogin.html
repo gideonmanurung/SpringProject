@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="static/css/shop-homepage.css" rel="stylesheet" />
+<title>Detail Building</title>
+</head>
+<body>
+	<nav th:replace="layoutLoginUser :: navbar"></nav>
+	<section>
+		<div class="container" th:each="building:${buildings}">
+			<div class="row" th:if="${building.status}==Rent">
+				<div class="thumbnail">
+					<img th:src="${'static/images/'+building.image}" alt="" />
+					<div class="caption">
+						<h4 class="pull-right" th:text="${building.harga}"></h4>
+						<h4 th:text="${building.namabangunan}"></h4>
+						<h4 th:text="${building.ukuran}"></h4>
+						<h4 th:text="${building.alamatbangunan}"></h4>
+						<p th:text="${building.deskripsi}" />
+					</div>
+					<form th:object="${building}" class="form-group" th:action="@{/rent}" method="POST">
+						<input type="hidden" name="idBuilding" th:value="${building.idBuilding}" />
+						<label>Durasi Rental</label>
+						<input type="text" name="duration" required="required" class="form-control"/><label>Bulan</label>
+						<div>
+							<button class="btn btn-lg btn-primary" >Rent</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row" th:if="${building.status}==Sell">
+				<div class="thumbnail">
+					<img th:src="${'static/images/'+building.image}" alt="" />
+					<div class="caption">
+						<h4 class="pull-right" th:text="${building.harga}"></h4>
+						<h4 th:text="${building.namabangunan}"></h4>
+						<h4 th:text="${building.ukuran}"></h4>
+						<h4 th:text="${building.alamatbangunan}"></h4>
+						<p th:text="${building.deskripsi}" />
+					</div>
+					<form th:object="${building}" th:action="@{/detailBuy}" method="POST">
+						<input type="hidden" name="idBuilding" th:value="${building.idBuilding}" />
+						<div class="caption">
+							<button class="btn btn-lg btn-primary">Buy</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer th:replace="LayoutLoginUser::footer"></footer>
+</body>
+</html>

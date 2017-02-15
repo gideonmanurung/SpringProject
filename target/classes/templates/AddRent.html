@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="static/css/shop-homepage.css" rel="stylesheet" />
+<title>My Home</title>
+</head>
+<body>
+	<nav th:replace="layoutLoginVendor :: navbar"></nav>
+	<div class="container-fluid">
+		<form class="form-signin" th:action="@{/addRent}" method="POST">
+			<h2 class="form-signin-heading">Add Building</h2>
+			<label>Nama bangunan</label> <input type="text" name="namabangunan"
+				class="form-control" placeholder="Nama Bangunan" required="required" /><br></br>
+			<label>Alamat</label><br></br>
+			<textarea rows="4" cols="50" class="form-control"
+				name="alamatbangunan" required="required"></textarea>
+			<br></br> <label>Jenis</label> <select name="kategori"
+				class="form-control">
+				<option value="Rumah">Rumah</option>
+				<br></br>
+				<option value="Gedung">Gedung</option>
+				<br></br>
+			</select> <label>Ukuran Bangunan</label> <input type="text" name="ukuran"
+				class="form-control" placeholder="Ukuran bangunan"
+				required="required" /><br></br> <label>Deskripsi</label>
+			<textarea rows="4" cols="50" class="form-control" name="deskripsi" required="required"></textarea>
+			<br></br> <label>Biaya Rental</label> <input type="text"
+				name="harga" class="form-control" placeholder="Harga"
+				required="required" /><br></br> 
+
+			<div class="form-control">
+				<label>File input</label> <input type="file" name="image" required="required"/>
+			</div>
+			<br></br>
+			<button class="btn btn-lg btn-primary">save</button>
+		</form>
+
+	</div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<footer th:replace="LayoutLoginVendor :: footer"></footer>
+</body>
+</html>

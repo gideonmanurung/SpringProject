@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="static/css/shop-homepage.css" rel="stylesheet" />
+<title>Detail Building</title>
+</head>
+<body>
+	<nav th:replace="layoutLoginVendor :: navbar"></nav>
+	<section>
+		<div class="container" th:each="building:${buildings}">
+			<div class="row" th:if="${building.status}==Rent">
+				<div class="thumbnail">
+					<img th:src="${'static/images/'+building.image}" alt="" />
+					<form class="form-group" th:action="@{/editBuilding}" method="POST">
+						<h2 class="form-signin-heading">Edit Building</h2>
+						<label>Nama bangunan</label>
+						<input type="text" name="namabangunan" class="form-control" required="required" th:value="${building.namabangunan}"/><br></br>
+						<label>Alamat</label><br></br>
+						<textarea rows="4" cols="50" class="form-control" name="alamatbangunan" required="required" th:text="${building.alamatbangunan}"></textarea><br></br> 
+						<label>Jenis</label> 
+						<select name="kategori" class="form-control">
+							<option value="Rumah">Rumah</option><br></br>
+							<option value="Gedung">Gedung</option><br></br>
+						</select> 
+						<label>Ukuran Bangunan</label> 
+						<input type="text" name="ukuran" class="form-control" required="required" th:value="${building.ukuran}"/><br></br> 
+						<label>Deskripsi</label>
+						<textarea rows="4" cols="50" class="form-control" name="deskripsi" required="required" th:text="${building.deskripsi}"></textarea><br></br> 
+						<label>Biaya Rental</label> 
+						<input type="text" name="harga" class="form-control" placeholder="Harga" required="required" th:value="${building.harga}"/><br></br> 
+						<div class="form-control">
+							<label>File input</label> <input type="file" name="image" required="required" th:value="${building.image}"/>
+						</div><br></br>
+						<input type="hidden" name="idBuilding" th:value="${building.idBuilding}"/>
+						<button class="btn btn-lg btn-primary">Save</button>
+					</form>
+				</div>
+			</div>
+			<div class="row" th:if="${building.status}==Sell">
+				<div class="thumbnail">
+					<img th:src="${'static/images/'+building.image}" alt="" />
+					<form class="form-group" th:action="@{/editBuilding}" method="POST">
+						<h2 class="form-signin-heading">Edit Building</h2>
+						<label>Nama bangunan</label>
+						<input type="text" name="namabangunan" class="form-control" required="required" th:value="${building.namabangunan}"/><br></br>
+						<label>Alamat</label><br></br>
+						<textarea rows="4" cols="50" class="form-control" name="alamatbangunan" required="required" th:text="${building.alamatbangunan}"></textarea><br></br> 
+						<label>Jenis</label> 
+						<select name="kategori" class="form-control">
+							<option value="Rumah">Rumah</option><br></br>
+							<option value="Gedung">Gedung</option><br></br>
+						</select> 
+						<label>Ukuran Bangunan</label> 
+						<input type="text" name="ukuran" class="form-control" required="required" th:value="${building.ukuran}"/><br></br> 
+						<label>Deskripsi</label>
+						<textarea rows="4" cols="50" class="form-control" name="deskripsi" required="required" th:text="${building.deskripsi}"></textarea><br></br> 
+						<label>Harga</label> 
+						<input type="text" name="harga" class="form-control" placeholder="Harga" required="required" th:value="${building.harga}"/><br></br> 
+						<div class="form-control">
+							<label>File input</label> <input type="file" name="image" required="required" th:value="${building.image}"/>
+						</div><br></br>
+						<input type="hidden" name="idBuilding" th:value="${building.idBuilding}"/>
+						<button class="btn btn-lg btn-primary">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer th:replace="LayoutLoginVendor::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+	
+    padding-top: 0px; /* Required padding for 
+    .navbar-fixed-top. Remove if using 
+    .navbar-static-top. Change if height of navigation changes. */
+     background: url("image/home.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.imge{
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+}
+.navbar-brand{
+	colour:#fff333
+}
+.col-md-3{
+	color:#ffffff;
+	position : right;
+  max-width: 350px;
+  padding: 15px;
+  margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.col-md-9{
+	
+	margin: auto;
+	position : right;
+}
+.slide-image {
+    width: 50%;
+}
+.brand{
+	margin-left: 100px;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+
+.navbar-inverse{
+	background-color: #000000;
+	opacity: 0.9;
+}
+.row{position:center; 
+	
+}
+footer{
+	
+
+  
+  padding: 15px;
+  margin: 0 auto;
+ background-color: rgba(0, 0, 0, 0.8);
+}
+
+.form-signin {
+	
+position : center;
+  max-width: 350px;
+  padding: 15px;
+  margin: 0 auto;
+ background-color: rgba(0, 0, 0, 0.8);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+

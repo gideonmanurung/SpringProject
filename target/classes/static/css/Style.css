@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+.node {
+  border: solid 1px red;
+}
+.node > .childrenWrapper {
+  border: solid 1px lightblue;
+  overflow: hidden;
+  padding-left: 10px;
+}
+.node > .childrenWrapper > .children {
+  transform: translateY(-100%);
+  transition: transform .5s ease;
+}
+.node.expanded > .childrenWrapper > .children {
+  transform: translateY(0);
+}
